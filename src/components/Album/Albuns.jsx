@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import capaSemestre1 from "../../assets/img/S1/Buguela/buguela-simbol.png";
 
 const PLAYLISTS = [
   {
@@ -6,7 +7,7 @@ const PLAYLISTS = [
     title: "1º Semestre & Front-End",
     artist: "Ygor Lopes",
     tracks: "12 projetos",
-    cover: "https://unsplash.com",
+    cover: capaSemestre1,    
     color: "from-green-600/20",
     stacks: ["HTML5", "CSS3", "JavaScript", "Logic", "Git", "Bulma"]
   },
@@ -42,7 +43,7 @@ const PLAYLISTS = [
     title: "5º Semestre & Full Stack App + Mobile",
     artist: "Ygor Lopes",
     tracks: "8 projetos",
-    cover: "https://unsplash.com",
+    cover: capaSemestre1, // 💻 Corrigido! Usando a variável importada corretamente para evitar a quebra
     color: "from-cyan-600/20",
     stacks: ["React Native", "Docker", "Git", "JWT", "Expo", 'Machine Learning']
   },
@@ -57,7 +58,7 @@ const PLAYLISTS = [
   }
 ];
 
-export default function AlbumGrid({ onBack }) {
+export default function AlbumGrid({ onBack, onSelectAlbum }) {
 return (
   <motion.div
     key="playlists-screen"
@@ -68,7 +69,6 @@ return (
     className="z-10 w-full max-w-5xl"
   >
 
-      {}
       <div className="mb-8">
         <span className="text-xs font-bold text-gray-400 tracking-widest uppercase">Navegar por Semestres</span>
         <h2 className="text-4xl font-black mt-1 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
@@ -76,18 +76,17 @@ return (
         </h2>
       </div>
 
-      {}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {PLAYLISTS.map((playlist, index) => (
           <motion.div
             key={playlist.id}
+            onClick={() => onSelectAlbum(playlist)}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.15, duration: 0.5 }}
             whileHover={{ y: -8, transition: { duration: 0.2 } }}
             className={`bg-[#121216] p-4 rounded-xl border border-white/5 shadow-xl hover:bg-[#181822] bg-gradient-to-b ${playlist.color} to-transparent transition-colors duration-300 group cursor-pointer flex flex-col justify-start h-full`}
           >
-            {}
             <div className="relative aspect-square w-full rounded-md overflow-hidden shadow-2xl bg-zinc-800 shrink-0">
               <img 
                 src={playlist.cover} 
@@ -104,7 +103,6 @@ return (
               </motion.div>
             </div>
 
-            {}
             <div className="mt-4 flex flex-col justify-between flex-grow">
               <div>
                 <h3 className="font-bold text-base tracking-wide text-gray-100 truncate group-hover:text-white">
@@ -115,7 +113,6 @@ return (
                 </p>
               </div>
 
-              {}
               <div className="mt-4 pt-3 border-t border-white/5">
                 <span className="text-[9px] font-bold text-cyan-400 block mb-2 tracking-widest uppercase">
                   GENEROS_UTILIZADOS:
@@ -133,7 +130,6 @@ return (
                 </div>
               </div>
 
-              {}
               <div className="mt-3 flex items-center justify-between text-[11px] text-purple-400 border-t border-white/5 pt-2 opacity-60 group-hover:opacity-100 transition-opacity">
                 <span>LP EXTENDED</span>
                 <span className="bg-purple-950/50 px-2 py-0.5 rounded border border-purple-500/20 text-purple-300 font-bold">
@@ -146,7 +142,6 @@ return (
         ))}
       </div>
 
-      {}
       <button 
         onClick={onBack}
         className="mt-12 text-xs text-gray-500 hover:text-white transition-colors underline block mx-auto tracking-widest"
