@@ -82,13 +82,13 @@ const MatrixRain = () => {
               key={charIndex}
               className={cn(
                 "leading-tight transition-all duration-100",
-                char.isLeading ? "text-white font-bold" : "text-green-400",
+                char.isLeading ? "text-white font-bold" : "text-spotify",
               )}
               style={{
                 opacity: char.opacity,
                 textShadow: char.isLeading
-                  ? "0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00"
-                  : "0 0 5px #00ff00",
+                  ? "0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954"
+                  : "0 0 5px #1db954",
                 fontSize: char.isLeading ? "0.9rem" : "0.75rem",
               }}
             >
@@ -193,6 +193,16 @@ export const CyberpunkCard = ({
   };
 
   const themeColors = {
+    spotify: {
+      primary: "from-[#05140c] via-black to-black",
+      secondary: "from-[#0a1a10] via-black to-[#0d6b32]",
+      accent: "bg-[#1ed760]",
+      accentHex: "#1ed760",
+      patternBorder: "border-spotify/60",
+      text: "text-white",
+      glow: "shadow-[#1db954]/40",
+      border: "border-[#1db954]",
+    },
     "neon-blue": {
       primary: "from-blue-500 via-cyan-400 to-blue-600",
       secondary: "from-blue-600 via-cyan-500 to-blue-700",
@@ -284,6 +294,7 @@ export const CyberpunkCard = ({
   };
 
   const currentTheme = themeColors[theme];
+  const themeAccentHex = currentTheme.accentHex ?? "#1ed760";
 
   // Fixed: Add proper null checking for customColors
   const customStyles =
@@ -297,16 +308,16 @@ export const CyberpunkCard = ({
         }
       : {};
 
+  const patternBorder = currentTheme.patternBorder ?? "border-current";
+
   const borderStyles = {
     solid: "border-2",
     dashed: "border-2 border-dashed",
     glitch: `border-2 ${glitchPhase % 3 === 0 ? "border-dashed" : glitchPhase % 3 === 1 ? "border-dotted" : "border-solid"}`,
     corners:
       "border-0 before:content-[''] before:absolute before:w-8 before:h-8 before:border-t-2 before:border-l-2 before:top-0 before:left-0 after:content-[''] after:absolute after:w-8 after:h-8 after:border-b-2 after:border-r-2 after:bottom-0 after:right-0",
-    animated:
-      "border-2 before:content-[''] before:absolute before:inset-0 before:border-2 before:border-current before:animate-pulse before:rounded-[inherit] before:pointer-events-none",
-    circuit:
-      "border-2 border-dashed before:content-[''] before:absolute before:inset-0 before:border-2 before:border-dotted before:border-current before:animate-ping before:rounded-[inherit] before:pointer-events-none before:opacity-75",
+    animated: `border-2 before:content-[''] before:absolute before:inset-0 before:border-2 before:${patternBorder} before:animate-pulse before:rounded-[inherit] before:pointer-events-none`,
+    circuit: `border-2 border-dashed before:content-[''] before:absolute before:inset-0 before:border-2 before:border-dotted before:${patternBorder} before:animate-ping before:rounded-[inherit] before:pointer-events-none before:opacity-75`,
   };
 
   const roundedStyles = {
@@ -327,7 +338,7 @@ export const CyberpunkCard = ({
   const getBackgroundPattern = () => {
     // Fixed: Add proper null checking for customColors
     const patternColor =
-      theme === "custom" && customColors ? customColors.accent : "currentColor";
+      theme === "custom" && customColors ? customColors.accent : themeAccentHex;
 
     switch (backgroundEffect) {
       case "circuit":
@@ -410,13 +421,13 @@ export const CyberpunkCard = ({
         ...customStyles,
         borderColor:
           colorShift && isHovered
-            ? `hsl(${(colorPhase * 3.6) % 360}, 100%, 70%)`
+            ? `hsl(${135 + (colorPhase % 5) * 5}, ${58 + (colorPhase % 4) * 6}%, ${42 + (colorPhase % 5) * 3}%)`
             : theme === "custom" && customColors
               ? customColors.accent
               : undefined,
         filter:
           hologramFlicker && isHovered
-            ? `hue-rotate(${colorPhase * 3.6}deg)`
+            ? `hue-rotate(${(colorPhase % 7) * 3 - 9}deg)`
             : undefined,
       }}
       onMouseMove={handleMouseMove}
@@ -426,6 +437,14 @@ export const CyberpunkCard = ({
       {...props}
     >
       {getBackgroundPattern()}
+
+      {/* Theme glow concentrated in the bottom-right corner */}
+      <div
+        className="pointer-events-none absolute inset-0 rounded-[inherit]"
+        style={{
+          background: `radial-gradient(65% 65% at 92% 96%, ${themeAccentHex}40, ${themeAccentHex}14 45%, transparent 75%)`,
+        }}
+      />
 
       {/* Inset ring highlight + soft outer shadow */}
       <div
@@ -462,7 +481,7 @@ export const CyberpunkCard = ({
             background: `radial-gradient(circle, ${
               theme === "custom" && customColors
                 ? customColors.accent
-                : currentTheme.accent.replace("bg-", "")
+                : themeAccentHex
             } 0%, transparent 70%)`,
           }}
         />

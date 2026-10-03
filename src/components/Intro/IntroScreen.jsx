@@ -1,9 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import eu from "../../assets/img/eu.jpg";
 import { CyberpunkCard } from "../ui/cyberpunk-card";
 
 export default function IntroScreen({ onEnter }) {
-  const devAge = 21; 
+  const devAge = 21;
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -18,58 +19,72 @@ export default function IntroScreen({ onEnter }) {
   return (
     <div ref={containerRef} className="w-full flex justify-center items-center">
       <motion.div
-        style={{ opacity, scale, y }} 
+        style={{ opacity, scale, y }}
         className="z-10 flex flex-col items-center select-none"
       >
-        <CyberpunkCard 
-          theme="neon-purple" 
-          borderStyle="circuit" 
-          colorShift={true} 
-          lightTrail={true} 
-          glow={true} 
+        <CyberpunkCard
+          theme="spotify"
+          borderStyle="circuit"
+          colorShift={true}
+          lightTrail={true}
+          glow={true}
           glowIntensity={4}
           backgroundEffect="scanlines"
-          className="w-[350px] sm:w-[400px]"
+          className="w-[340px] sm:w-[380px]"
         >
-          <div className="p-6">
-            <div className="flex justify-between items-center border-b border-purple-500/30 pb-3 mb-4 text-xs text-purple-400">
-              <span>TRACK_01 // INTRO</span>
+          <div className="p-6 sm:p-8">
+            <div className="flex justify-between items-center border-b border-spotify/30 pb-3 mb-5 text-xs text-white">
+              <span>TRACK_01 INTRO</span>
               <span className="animate-pulse">● LIVE_SERVER_OK</span>
             </div>
 
-            <h1 className="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 uppercase">
-              Ygor Lopes
-            </h1>
-            
-            <p className="text-sm font-bold text-cyan-400 mt-1 tracking-widest uppercase">
-              BACKEND_DEVELOPER // STACK.JAVA
-            </p>
+            <div className="flex flex-col items-center text-center">
+              <div className="w-[112px] sm:w-[152px]">
+                <img
+                  src={eu}
+                  alt="Ygor Lopes"
+                  className="w-full aspect-[3/4] object-cover rounded-lg border border-spotify/30 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+                />
+              </div>
 
-            <div className="mt-6 space-y-2 bg-black/40 p-4 rounded border border-purple-500/20 text-sm">
-              <div className="flex justify-between">
-                <span className="text-gray-400">IDADE:</span>
-                <span className="text-white font-bold">{devAge} ANOS</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-400">CORE:</span>
-                <span className="text-cyan-300">JAVA SPRING // POSTGRES</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-400">STATUS:</span>
-                <span className="text-green-400">COMPILING_PORTFOLIO</span>
+              <h1 className="text-3xl mt-5 font-black tracking-wider text-white uppercase">
+                Ygor Lopes
+              </h1>
+
+              <p className="text-[11px] font-bold text-white mt-1 tracking-widest uppercase">
+                BACKEND_DEVELOPER STACK.JAVA
+              </p>
+
+              <div className="w-full max-w-[270px] mt-5 space-y-1.5 bg-black/50 p-3.5 rounded border border-white/10 text-[13px]">
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-fg">IDADE:</span>
+                  <span className="text-white font-bold">{devAge} ANOS</span>
+                </div>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-fg">CORE:</span>
+                  <span className="text-white">JAVA SPRING</span>
+                </div>
+                  <div className="flex justify-between gap-2">
+                  <span className="text-muted-fg">INGLES:</span>
+                  <span className="text-white">A2+</span>
+                </div>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-fg">STATUS:</span>
+                  <span className="text-white">COMPILING_PORTFOLIO</span>
+                </div>
               </div>
             </div>
 
-            <motion.button 
-              whileHover={{ scale: 1.02, boxShadow: "0 0 15px rgba(168, 85, 247, 0.6)" }}
+            <motion.button
+              whileHover={{ scale: 1.02, boxShadow: "0 0 15px rgba(29, 185, 84, 0.55)" }}
               whileTap={{ scale: 0.98 }}
               onClick={onEnter}
-              className="w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded text-center tracking-widest text-xs uppercase transition-all duration-300 border border-pink-400/30"
+              className="w-full mt-6 bg-spotify hover:bg-spotify-light text-black font-bold py-3 px-4 rounded text-center tracking-widest text-xs uppercase transition-all duration-300"
             >
               Ver Albuns (Entrar)
             </motion.button>
-            
-            <p className="text-[10px] text-center text-gray-500 mt-3 animate-pulse">
+
+            <p className="text-[10px] text-center text-white/70 mt-3 animate-pulse">
               ↓ Role para baixo para ver os álbuns ↓
             </p>
           </div>
