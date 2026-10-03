@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import capaSemestre1 from "../../assets/img/S1/Buguela/buguela-simbol.png";
+import capaSemestre1 from "../../assets/img/S1/Buguela/buguela-icon.png";
 
 const PLAYLISTS = [
   {
@@ -43,7 +43,7 @@ const PLAYLISTS = [
     title: "5º Semestre & Full Stack App + Mobile",
     artist: "Ygor Lopes",
     tracks: "8 projetos",
-    cover: capaSemestre1, // 💻 Corrigido! Usando a variável importada corretamente para evitar a quebra
+    cover:  "japapaidnfinfd", 
     color: "from-cyan-600/20",
     stacks: ["React Native", "Docker", "Git", "JWT", "Expo", 'Machine Learning']
   },
