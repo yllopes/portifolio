@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import capaSemestre1 from "../../assets/img/S1/Buguela/buguela-icon.png";
-import capaSemestre2 from "../../assets/img/S2/visgo-ini.png";
-import capaSemestre3 from "../../assets/img/S3/pilates-ini.png";
-import capaSemestre4 from "../../assets/img/S4/rofe_ini.png";
-import capaSemestre5 from "../../assets/img/S5/mobile.png";
+import number1 from "../../assets/img/S1/number1.jpg";
+import number2 from "../../assets/img/S2/number2.jpg";
+import number3 from "../../assets/img/S3/number3.jpg";
+import number4 from "../../assets/img/S4/number4.jpg";
+import number5 from "../../assets/img/S5/number5.jpg";
+import number6 from "../../assets/img/S6/number6.jpg";
+
+
 import SemesterCover from "./SemesterCover";
 
 const PLAYLISTS = [
@@ -12,7 +15,7 @@ const PLAYLISTS = [
     title: "1º Semestre & Front-End",
     artist: "Ygor Lopes",
     tracks: "12 projetos",
-    cover: capaSemestre1,
+    cover: number1,
     color: "from-[#1DB954]/10",
     stacks: ["HTML5", "CSS3", "JavaScript", "Logic", "Git", "Bulma"]
   },
@@ -21,7 +24,7 @@ const PLAYLISTS = [
     title: "2º Semestre & Front-End + BackEnd",
     artist: "Ygor Lopes",
     tracks: "8 projetos",
-    cover: capaSemestre2,
+    cover: number2,
     color: "from-[#1DB954]/10",
     stacks: ["PHP", "MySQL", "SQLite", "JavaScript", "Tailwind", "Git", "UI Design"]
   },
@@ -30,7 +33,7 @@ const PLAYLISTS = [
     title: "3º Semestre & Full Stack App + SCRUM",
     artist: "Ygor Lopes",
     tracks: "5 projetos",
-    cover: capaSemestre3,
+    cover: number3,
     color: "from-[#1DB954]/10",
     stacks: ["Java", "Spring Boot", "React", "MongoDB","Git", "UI Design", "SCRUM"]
   },
@@ -39,7 +42,7 @@ const PLAYLISTS = [
     title: "4º Semestre & Full Stack App + AWS",
     artist: "Ygor Lopes",
     tracks: "12 projetos",
-    cover: capaSemestre4,
+    cover: number4,
     color: "from-[#1DB954]/10",
     stacks: ["Java", "Spring Boot", "Spring Security", "React", "JWT", "Docker", "AWS", "Git", "AntDesign", "UI Design", "XP"]
   },
@@ -48,7 +51,7 @@ const PLAYLISTS = [
     title: "5º Semestre & Full Stack App + Mobile",
     artist: "Ygor Lopes",
     tracks: "8 projetos",
-    cover: capaSemestre5,
+    cover: number5,
     color: "from-[#1DB954]/10",
     stacks: ["React Native", "Docker", "Git", "JWT", "Expo", 'Machine Learning']
   },
@@ -57,7 +60,7 @@ const PLAYLISTS = [
     title: "6º Semestre(Em Desenvolvimento)",
     artist: "Ygor Lopes",
     tracks: "5 projetos",
-    cover: null,
+    cover: number6,
     color: "from-[#1DB954]/10",
     stacks: ["C++", "Kotlin", "Docker", "Git"]
   }
