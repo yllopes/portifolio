@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import SemesterCover from "../Album/SemesterCover";
 import Equalizer from "../ui/Equalizer";
-import { PROJECTS_DATA } from "./PROJECTS_DATA";
+import { PROJECTS_DATA } from "../../data/PROJECTS_DATA";
 
 export default function Tracklist({ album, onBack, onSelectProject, currentProject }) {
   if (!album) return <div className="text-white p-6">Carregando faixas...</div>;

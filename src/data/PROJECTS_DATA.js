@@ -1,30 +1,30 @@
 
-import buguelaIcon from "../../assets/img/S1/Buguela/buguela-icon.png";
-import buguelaMain from "../../assets/img/S1/Buguela/buguela.png";
-import buguela1 from "../../assets/img/S1/Buguela/buguela1.png";
-import buguela2 from "../../assets/img/S1/Buguela/buguela2.png";
-import buguela3 from "../../assets/img/S1/Buguela/buguela3.png";
-import cartazImg from "../../assets/img/S1/MySoundE/cartaz.png";
-import mysoundInit from "../../assets/img/S1/MySoundE/Mysound-init.png";
+import buguelaIcon from "../assets/img/S1/Buguela/buguela-icon.png";
+import buguelaMain from "../assets/img/S1/Buguela/buguela.png";
+import buguela1 from "../assets/img/S1/Buguela/buguela1.png";
+import buguela2 from "../assets/img/S1/Buguela/buguela2.png";
+import buguela3 from "../assets/img/S1/Buguela/buguela3.png";
+import cartazImg from "../assets/img/S1/MySoundE/cartaz.png";
+import mysoundInit from "../assets/img/S1/MySoundE/Mysound-init.png";
 
 
-import visgoGerenciamento from "../../assets/img/S2/visgo-gerenciamento.png";
-import visgoIni from "../../assets/img/S2/visgo-ini.png";
-import visgoLogin from "../../assets/img/S2/visgo-login.png";
+import visgoGerenciamento from "../assets/img/S2/visgo-gerenciamento.png";
+import visgoIni from "../assets/img/S2/visgo-ini.png";
+import visgoLogin from "../assets/img/S2/visgo-login.png";
 
 
-import pilatesAssinatura from "../../assets/img/S3/pilates-assinatura.png";
-import pilatesIni from "../../assets/img/S3/pilates-ini.png";
-import pilatesLogin from "../../assets/img/S3/pilates-login.png";
+import pilatesAssinatura from "../assets/img/S3/pilates-assinatura.png";
+import pilatesIni from "../assets/img/S3/pilates-ini.png";
+import pilatesLogin from "../assets/img/S3/pilates-login.png";
 
 
-import rofeLogin from "../../assets/img/S4/rofe-login.png";
-import rofeMain from "../../assets/img/S4/rofe.png";
-import rofeIni from "../../assets/img/S4/rofe_ini.png";
+import rofeLogin from "../assets/img/S4/rofe-login.png";
+import rofeMain from "../assets/img/S4/rofe.png";
+import rofeIni from "../assets/img/S4/rofe_ini.png";
 
 
-import leadMobile from "../../assets/img/S5/lead_mobile.png";
-import mobileMain from "../../assets/img/S5/mobile.png";
+import leadMobile from "../assets/img/S5/lead_mobile.png";
+import mobileMain from "../assets/img/S5/mobile.png";
 
 export const PROJECTS_DATA = {
   1: [

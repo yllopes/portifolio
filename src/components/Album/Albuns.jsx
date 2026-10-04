@@ -8,13 +8,19 @@ import number6 from "../../assets/img/S6/number6.jpg";
 
 
 import SemesterCover from "./SemesterCover";
+import { PROJECTS_DATA } from "../../data/PROJECTS_DATA";
+
+const formatTracks = (id) => {
+  const n = PROJECTS_DATA[id]?.length ?? 0;
+  if (n === 0) return "Em desenvolvimento";
+  return `${n} ${n === 1 ? "projeto" : "projetos"}`;
+};
 
 const PLAYLISTS = [
   {
     id: 1,
     title: "1º Semestre & Front-End",
     artist: "Ygor Lopes",
-    tracks: "12 projetos",
     cover: number1,
     color: "from-[#1DB954]/10",
     stacks: ["HTML5", "CSS3", "JavaScript", "Logic", "Git", "Bulma"]
@@ -23,7 +29,6 @@ const PLAYLISTS = [
     id: 2,
     title: "2º Semestre & Front-End + BackEnd",
     artist: "Ygor Lopes",
-    tracks: "8 projetos",
     cover: number2,
     color: "from-[#1DB954]/10",
     stacks: ["PHP", "MySQL", "SQLite", "JavaScript", "Bootstrap", "Git", "UI Design"]
@@ -32,7 +37,6 @@ const PLAYLISTS = [
     id: 3,
     title: "3º Semestre & Full Stack App + SCRUM",
     artist: "Ygor Lopes",
-    tracks: "5 projetos",
     cover: number3,
     color: "from-[#1DB954]/10",
     stacks: ["Java", "Spring Boot", "React", "MongoDB","Git", "UI Design", "SCRUM"]
@@ -41,7 +45,6 @@ const PLAYLISTS = [
     id: 4,
     title: "4º Semestre & Full Stack App + AWS",
     artist: "Ygor Lopes",
-    tracks: "12 projetos",
     cover: number4,
     color: "from-[#1DB954]/10",
     stacks: ["Java", "Spring Boot", "Spring Security", "React", "JWT", "Docker", "AWS", "Git", "AntDesign", "UI Design", "XP"]
@@ -50,7 +53,6 @@ const PLAYLISTS = [
     id: 5,
     title: "5º Semestre & Full Stack App + Mobile",
     artist: "Ygor Lopes",
-    tracks: "8 projetos",
     cover: number5,
     color: "from-[#1DB954]/10",
     stacks: ["React Native", "Docker", "Git", "JWT", "Expo", 'Machine Learning']
@@ -59,7 +61,6 @@ const PLAYLISTS = [
     id: 6,
     title: "6º Semestre(Em Desenvolvimento)",
     artist: "Ygor Lopes",
-    tracks: "5 projetos",
     cover: number6,
     color: "from-[#1DB954]/10",
     stacks: ["C++", "Kotlin", "Docker", "Git"]
@@ -142,7 +143,7 @@ return (
               <div className="mt-3 flex items-center justify-between text-[11px] text-spotify border-t border-white/5 pt-2 opacity-60 group-hover:opacity-100 transition-opacity">
                 <span>LP EXTENDED</span>
                 <span className="bg-spotify-950 px-2 py-0.5 rounded border border-spotify/25 text-spotify-soft font-bold">
-                  {playlist.tracks}
+                  {formatTracks(playlist.id)}
                 </span>
               </div>
             </div>
