@@ -26,7 +26,7 @@ const PLAYLISTS = [
     tracks: "8 projetos",
     cover: number2,
     color: "from-[#1DB954]/10",
-    stacks: ["PHP", "MySQL", "SQLite", "JavaScript", "Tailwind", "Git", "UI Design"]
+    stacks: ["PHP", "MySQL", "SQLite", "JavaScript", "Bootstrap", "Git", "UI Design"]
   },
   {
     id: 3,
