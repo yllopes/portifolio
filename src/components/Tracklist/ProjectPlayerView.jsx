@@ -46,7 +46,7 @@ export default function ProjectPlayerView({ project, onBack }) {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </AnimatePresence>
 
@@ -82,7 +82,7 @@ export default function ProjectPlayerView({ project, onBack }) {
                 <button onClick={nextPrint} className="p-3 text-muted-fg hover:text-white transition-transform active:scale-90"><svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6z"/></svg></button>
               </div>
 
-              <a href={`https://${project.repo}`} target="_blank" rel="noreferrer" className="bg-white hover:bg-[#1db954] hover:text-black text-black font-black text-xs py-3.5 px-6 rounded-full transition-all duration-300 uppercase tracking-widest font-mono shadow-lg active:scale-95">
+              <a href={project.repo} target="_blank" rel="noreferrer" className="bg-white hover:bg-[#1db954] hover:text-black text-black font-black text-xs py-3.5 px-6 rounded-full transition-all duration-300 uppercase tracking-widest font-mono shadow-lg active:scale-95">
                 Abrir Código Source
               </a>
             </div>

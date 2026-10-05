@@ -14,8 +14,8 @@ export default function Tracklist({ album, onBack, onSelectProject, currentProje
         <SemesterCover
           src={album.cover}
           alt={album.title}
-          imgClassName="w-44 h-44 object-cover object-top rounded-lg shadow-2xl border border-white/5 bg-ink-3"
-          boxClassName="w-44 h-44 rounded-lg border border-white/5"
+          imgClassName="w-44 aspect-[11/6] object-cover rounded-lg shadow-2xl border border-white/5 bg-ink-3"
+          boxClassName="w-44 aspect-[11/6] rounded-lg border border-white/5"
         />
         <div className="text-center sm:text-left">
           <span className="text-xs font-bold text-spotify tracking-widest uppercase">Álbum de Semestre</span>
