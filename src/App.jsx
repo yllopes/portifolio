@@ -3,6 +3,7 @@ import AlbumGrid from "./components/Album/Albuns";
 import IntroScreen from "./components/Intro/IntroScreen";
 import ProjectPlayerView from "./components/Tracklist/ProjectPlayerView";
 import Tracklist from "./components/Tracklist/Tracklist";
+import AmbientSoundControl from "./components/ui/AmbientSoundControl";
 
 export default function App() {
   const albumSectionRef = useRef(null);
@@ -72,6 +73,8 @@ export default function App() {
           </section>
         </>
       )}
+
+      <AmbientSoundControl />
     </div>
   );
 }
