@@ -1,7 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 import eu from "../../assets/img/eu.jpg";
 import { CyberpunkCard } from "../ui/cyberpunk-card";
+
+const SOCIALS = [
+  { name: "GitHub", href: "https://github.com/yllopes", Icon: GithubLogo },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/ygorlopes/", Icon: LinkedinLogo }
+];
 
 export default function IntroScreen({ onEnter }) {
   const devAge = 21;
@@ -73,6 +79,21 @@ export default function IntroScreen({ onEnter }) {
                   <span className="text-white">COMPILING_PORTFOLIO</span>
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 mt-5">
+              {SOCIALS.map(({ name, href, Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={name}
+                  className="w-10 h-10 grid place-items-center rounded-full border border-white/10 bg-white/5 text-white/70 hover:text-spotify hover:border-spotify/50 hover:bg-spotify/10 transition-all duration-300 active:scale-90"
+                >
+                  <Icon size={18} weight="fill" />
+                </a>
+              ))}
             </div>
 
             <motion.button
